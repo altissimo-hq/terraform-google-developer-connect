@@ -1,0 +1,61 @@
+<!-- BEGIN_TF_DOCS -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_google"></a> [google](#requirement\_google) | >= 5.0.0 |
+| <a name="requirement_google-beta"></a> [google-beta](#requirement\_google-beta) | >= 5.0.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_google"></a> [google](#provider\_google) | >= 5.0.0 |
+| <a name="provider_google-beta"></a> [google-beta](#provider\_google-beta) | >= 5.0.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [google-beta_google_developer_connect_connection.github](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/google_developer_connect_connection) | resource |
+| [google-beta_google_developer_connect_git_repository_link.repositories](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/google_developer_connect_git_repository_link) | resource |
+| [google-beta_google_project_service_identity.developer_connect](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/google_project_service_identity) | resource |
+| [google_secret_manager_secret.github_auth_token](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/secret_manager_secret) | resource |
+| [google_secret_manager_secret_iam_member.developer_connect_github_auth_token](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/secret_manager_secret_iam_member) | resource |
+| [google_client_config.current](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/client_config) | data source |
+| [google_secret_manager_secret_version.github_auth_token](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/secret_manager_secret_version) | data source |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_github_login"></a> [github\_login](#input\_github\_login) | GitHub login of the user or organization that owns the repositories | `string` | n/a | yes |
+| <a name="input_project"></a> [project](#input\_project) | Google Project ID in which to create the Developer Connect resources | `string` | n/a | yes |
+| <a name="input_connection_id"></a> [connection\_id](#input\_connection\_id) | Connection ID for the Developer Connect connection | `string` | `"github"` | no |
+| <a name="input_create_secret"></a> [create\_secret](#input\_create\_secret) | Whether to create the GitHub OAuth Token Secret | `bool` | `false` | no |
+| <a name="input_github_app"></a> [github\_app](#input\_github\_app) | The GitHub App integration type. Common values include DEVELOPER\_CONNECT or FIREBASE. | `string` | `"FIREBASE"` | no |
+| <a name="input_github_app_installation_id"></a> [github\_app\_installation\_id](#input\_github\_app\_installation\_id) | Installation ID for the GitHub App. Required if github\_app is DEVELOPER\_CONNECT. | `number` | `null` | no |
+| <a name="input_oauth_token_secret"></a> [oauth\_token\_secret](#input\_oauth\_token\_secret) | Name of the GitHub OAuth Token Secret | `string` | `"github-token"` | no |
+| <a name="input_oauth_token_secret_version"></a> [oauth\_token\_secret\_version](#input\_oauth\_token\_secret\_version) | Secret Version ID of the GitHub OAuth Token | `string` | `"latest"` | no |
+| <a name="input_region"></a> [region](#input\_region) | Region of the Developer Connect Connection to GitHub | `string` | `""` | no |
+| <a name="input_repositories"></a> [repositories](#input\_repositories) | List of GitHub repositories to create Developer Connect Git Repository Links for | `list(string)` | `[]` | no |
+| <a name="input_secret_project"></a> [secret\_project](#input\_secret\_project) | Google Project ID in which the GitHub OAuth Token Secret is stored | `string` | `null` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_oauth_token_secret_version"></a> [oauth\_token\_secret\_version](#output\_oauth\_token\_secret\_version) | Secret Version ID of the GitHub OAuth Token |
+| <a name="output_repository_ids"></a> [repository\_ids](#output\_repository\_ids) | Map of Developer Connect Git Repository Links |
+
+## Terraform Docs
+To Manually Generate Terraform Documentation for this Module, run the following command from the root of the Module's Repository:
+
+```
+docker run --rm --volume "$(pwd):/terraform-docs" -u $(id -u) quay.io/terraform-docs/terraform-docs:latest --output-file README.md --output-mode inject /terraform-docs
+```
+<!-- END_TF_DOCS -->
