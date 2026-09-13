@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        google_version: ['5.0.0', 'latest']
+        google_version: ['6.4.0', 'latest']
     steps:
       - uses: actions/checkout@v7
       - uses: hashicorp/setup-terraform@v4

@@ -3,15 +3,15 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_google"></a> [google](#requirement\_google) | >= 5.0.0 |
-| <a name="requirement_google-beta"></a> [google-beta](#requirement\_google-beta) | >= 5.0.0 |
+| <a name="requirement_google"></a> [google](#requirement\_google) | >= 6.4.0 |
+| <a name="requirement_google-beta"></a> [google-beta](#requirement\_google-beta) | >= 6.4.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | >= 5.0.0 |
-| <a name="provider_google-beta"></a> [google-beta](#provider\_google-beta) | >= 5.0.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | 8.2.0 |
+| <a name="provider_google-beta"></a> [google-beta](#provider\_google-beta) | 8.2.0 |
 
 ## Modules
 
