@@ -2,16 +2,16 @@
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_google"></a> [google](#requirement\_google) | >= 6.4.0 |
 | <a name="requirement_google-beta"></a> [google-beta](#requirement\_google-beta) | >= 6.4.0 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 8.2.0 |
-| <a name="provider_google-beta"></a> [google-beta](#provider\_google-beta) | 8.2.0 |
+| ---- | ------- |
+| <a name="provider_google"></a> [google](#provider\_google) | >= 6.4.0 |
+| <a name="provider_google-beta"></a> [google-beta](#provider\_google-beta) | >= 6.4.0 |
 
 ## Modules
 
@@ -20,7 +20,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [google-beta_google_developer_connect_connection.github](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/google_developer_connect_connection) | resource |
 | [google-beta_google_developer_connect_git_repository_link.repositories](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/google_developer_connect_git_repository_link) | resource |
 | [google-beta_google_project_service_identity.developer_connect](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/google_project_service_identity) | resource |
@@ -32,7 +32,7 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_github_login"></a> [github\_login](#input\_github\_login) | GitHub login of the user or organization that owns the repositories | `string` | n/a | yes |
 | <a name="input_project"></a> [project](#input\_project) | Google Project ID in which to create the Developer Connect resources | `string` | n/a | yes |
 | <a name="input_connection_id"></a> [connection\_id](#input\_connection\_id) | Connection ID for the Developer Connect connection | `string` | `"github"` | no |
@@ -48,7 +48,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_oauth_token_secret_version"></a> [oauth\_token\_secret\_version](#output\_oauth\_token\_secret\_version) | Secret Version ID of the GitHub OAuth Token |
 | <a name="output_repository_ids"></a> [repository\_ids](#output\_repository\_ids) | Map of Developer Connect Git Repository Links |
 
